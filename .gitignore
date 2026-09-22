@@ -1,0 +1,12 @@
+# JetBrains IDEs (IntelliJ IDEA, WebStorm, etc.)
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*~
+
+# Editor backup files
+*.swp
+*.swo
+*~
