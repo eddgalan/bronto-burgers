@@ -1,45 +1,16 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Menú de Bronto Hamburguesas">
+
   <title>Bronto Hamburguesas</title>
-  <meta name="description" content="Menú de Bronto Hamburguesas" />
-  <!-- Tailwind CSS v4 browser build. Para producción conviene compilar Tailwind con Vite/PostCSS. -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.13"></script>
-  <style type="text/tailwindcss">
-    @theme {
-      --color-bronto-orange: #f06a1b;
-      --color-bronto-cream: #eee1ca;
-      --color-bronto-black: #171716;
-      --color-bronto-brown: #633b22;
-      --font-display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    }
 
-    @layer base {
-      html { scroll-behavior: smooth; }
-      body { @apply bg-bronto-black text-stone-900 antialiased; }
-    }
-
-    @layer components {
-      .display { font-family: var(--font-display); letter-spacing: .025em; }
-      .paper {
-        background:
-          radial-gradient(circle at 10% 20%, rgb(120 82 50 / .08), transparent 22%),
-          radial-gradient(circle at 90% 60%, rgb(120 82 50 / .08), transparent 24%),
-          #eee1ca;
-      }
-      .nav-link { @apply text-sm font-black uppercase tracking-wide transition hover:text-bronto-orange; }
-      .menu-tab { @apply rounded-md bg-zinc-900 px-5 py-3 text-xs font-black uppercase tracking-wide text-white transition hover:bg-bronto-orange; }
-      .menu-tab.active { @apply bg-bronto-orange; }
-      .card { @apply overflow-hidden rounded-xl border border-black/10 bg-[#f4ead8] shadow-sm; }
-      .price-row { @apply flex items-baseline justify-between gap-4 text-sm leading-5; }
-      .price-row strong { @apply font-black; }
-      .footprint { @apply text-3xl font-black text-bronto-orange; }
-    }
-  </style>
+  @fonts
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="bg-bronto-black text-stone-900 antialiased">
   <header class="sticky top-0 z-50 border-b border-white/10 bg-[#171716]/95 text-white backdrop-blur">
     <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3 lg:px-8">
       <a href="#inicio" class="flex items-center gap-3">
@@ -57,9 +28,21 @@
         <a class="nav-link" href="#ubicacion">Ubicación</a>
         <a class="nav-link" href="#contacto">Contacto</a>
       </nav>
-      <a href="https://wa.me/525612698325" class="rounded-full border border-white/20 px-4 py-2 text-sm font-black hover:border-bronto-orange hover:text-bronto-orange">
-        WhatsApp · 56 1269 8325
-      </a>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/525612698325" class="hidden rounded-full border border-white/20 px-4 py-2 text-sm font-black transition hover:border-bronto-orange hover:text-bronto-orange sm:inline-flex">
+          WhatsApp · 56 1269 8325
+        </a>
+
+        @auth
+          <a href="{{ route('dashboard') }}" class="rounded-full bg-bronto-orange px-4 py-2 text-sm font-black text-white transition hover:bg-orange-500">
+            Mi cuenta
+          </a>
+        @else
+          <a href="{{ route('login') }}" class="rounded-full bg-bronto-orange px-4 py-2 text-sm font-black text-white transition hover:bg-orange-500">
+            Ingresar
+          </a>
+        @endauth
+      </div>
     </div>
   </header>
 
@@ -213,15 +196,6 @@
     </footer>
   </main>
 
-  <script>
-    const tabs = document.querySelectorAll('[data-filter]');
-    const panels = document.querySelectorAll('[data-panel]');
-    tabs.forEach(tab => tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panels.forEach(p => p.classList.add('hidden'));
-      tab.classList.add('active');
-      document.querySelector(`[data-panel="${tab.dataset.filter}"]`).classList.remove('hidden');
-    }));
-  </script>
 </body>
 </html>
+
