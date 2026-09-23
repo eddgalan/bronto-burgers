@@ -13,6 +13,18 @@
         </div>
 
         <div class="flex flex-col gap-2">
+            <label for="lastname" class="text-sm font-medium text-stone-200">Apellidos</label>
+            <input id="lastname" name="lastname" type="text" value="{{ old('lastname') }}" required autocomplete="lastname" class="rounded-xl border border-white/10 bg-stone-950/70 px-4 py-3 text-white outline-none transition placeholder:text-stone-600 focus:border-orange-400 focus:ring-3 focus:ring-orange-400/15" placeholder="Tus apellidos">
+            <x-input-error :messages="$errors->get('lastname')" />
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <label for="phone_number" class="text-sm font-medium text-stone-200">Número celular</label>
+            <input id="phone_number" name="phone_number" type="text" value="{{ old('phone_number') }}" required autocomplete="phone_number" class="rounded-xl border border-white/10 bg-stone-950/70 px-4 py-3 text-white outline-none transition placeholder:text-stone-600 focus:border-orange-400 focus:ring-3 focus:ring-orange-400/15" placeholder="Número a 10 dígitos">
+            <x-input-error :messages="$errors->get('phone_number')" />
+        </div>
+
+        <div class="flex flex-col gap-2">
             <label for="email" class="text-sm font-medium text-stone-200">Correo electrónico</label>
             <input id="email" name="email" type="email" value="{{ old('email') }}" required autocomplete="email" class="rounded-xl border border-white/10 bg-stone-950/70 px-4 py-3 text-white outline-none transition placeholder:text-stone-600 focus:border-orange-400 focus:ring-3 focus:ring-orange-400/15" placeholder="tu@correo.com">
             <x-input-error :messages="$errors->get('email')" />
