@@ -1,15 +1,23 @@
-const menuTabs = document.querySelectorAll('[data-filter]');
-const menuPanels = document.querySelectorAll('[data-panel]');
+document.addEventListener('click', (event) => {
+    const selectedTab = event.target.closest('[data-filter]');
 
-menuTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-        menuTabs.forEach((menuTab) => menuTab.classList.remove('active'));
-        menuPanels.forEach((panel) => panel.classList.add('hidden'));
+    if (!selectedTab) {
+        return;
+    }
 
-        tab.classList.add('active');
+    const selectedPanel = document.querySelector(
+        `[data-panel="${selectedTab.dataset.filter}"]`,
+    );
 
-        document
-            .querySelector(`[data-panel="${tab.dataset.filter}"]`)
-            ?.classList.remove('hidden');
+    if (!selectedPanel) {
+        return;
+    }
+
+    document.querySelectorAll('[data-filter]').forEach((menuTab) => {
+        menuTab.classList.toggle('active', menuTab === selectedTab);
+    });
+
+    document.querySelectorAll('[data-panel]').forEach((panel) => {
+        panel.hidden = panel !== selectedPanel;
     });
 });

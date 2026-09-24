@@ -89,12 +89,12 @@
         </div>
 
         <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <button class="menu-tab active" data-filter="burgers">Hamburguesas</button>
-          <button class="menu-tab" data-filter="entradas">Entradas</button>
-          <button class="menu-tab" data-filter="alitas">Alitas y Boneless</button>
-          <button class="menu-tab" data-filter="hotdogs">Hot Dogs</button>
-          <button class="menu-tab" data-filter="bebidas">Bebidas</button>
-          <button class="menu-tab" data-filter="extras">Extras</button>
+          <button type="button" class="menu-tab active" data-filter="burgers">Hamburguesas</button>
+          <button type="button" class="menu-tab" data-filter="entradas">Entradas</button>
+          <button type="button" class="menu-tab" data-filter="alitas">Alitas y Boneless</button>
+          <button type="button" class="menu-tab" data-filter="hotdogs">Hot Dogs</button>
+          <button type="button" class="menu-tab" data-filter="bebidas">Bebidas</button>
+          <button type="button" class="menu-tab" data-filter="extras">Extras</button>
         </div>
 
         <div class="mt-10 menu-panel" data-panel="burgers">
@@ -151,25 +151,25 @@
           </div>
         </div>
 
-        <div class="menu-panel hidden" data-panel="entradas">
+        <div class="menu-panel" data-panel="entradas" hidden>
           <div class="grid gap-5 md:grid-cols-2">
             <article class="card p-6"><h3 class="display text-3xl">PAPAS</h3><div class="mt-4 space-y-2"><div class="price-row"><span>Individuales · 150 gr</span><strong>$25</strong></div><div class="price-row"><span>Chicas · 330 gr</span><strong>$50</strong></div><div class="price-row"><span>Familiares · 670 gr</span><strong>$95</strong></div></div></article>
             <article class="card p-6"><h3 class="display text-3xl">AROS DE CEBOLLA</h3><div class="mt-4 space-y-2"><div class="price-row"><span>Individuales</span><strong>$35</strong></div><div class="price-row"><span>Chicos</span><strong>$70</strong></div></div></article>
           </div>
         </div>
 
-        <div class="menu-panel hidden" data-panel="alitas">
+        <div class="menu-panel" data-panel="alitas" hidden>
           <div class="grid gap-5 md:grid-cols-2">
             <article class="card p-6"><h3 class="display text-3xl">ALITAS <span class="float-right">$90</span></h3><p class="mt-4">6 piezas con 150 gr de papas. Sabores: BBQ, Mango Habanero o Búfalo.</p></article>
             <article class="card p-6"><h3 class="display text-3xl">BONELESS <span class="float-right">$135</span></h3><p class="mt-4">8 piezas con 150 gr de papas. Sabores: BBQ, Mango Habanero o Búfalo.</p></article>
           </div>
         </div>
 
-        <div class="menu-panel hidden" data-panel="hotdogs">
+        <div class="menu-panel" data-panel="hotdogs" hidden>
           <article class="card mx-auto max-w-2xl p-6"><h3 class="display text-3xl">FÓSIL-DOG</h3><div class="mt-4"><div class="price-row"><span>Hot Dog Sencillo</span><strong>$60</strong></div><p class="mb-4 text-sm">Salchicha, pan 15 cm, tocino, pepinillos, picante, mostaza, mayonesa, catsup, jitomate, cebolla y papas.</p><div class="price-row"><span>Hot Dog Hawaiano</span><strong>$70</strong></div><p class="text-sm">Piña, jamón y queso manchego.</p></div></article>
         </div>
 
-        <div class="menu-panel hidden" data-panel="bebidas">
+        <div class="menu-panel" data-panel="bebidas" hidden>
           <div class="grid gap-5 md:grid-cols-3">
             <article class="card p-6"><h3 class="display text-2xl">MALTEADAS</h3><div class="mt-3 space-y-1"><div class="price-row"><span>Magnum</span><strong>$110</strong></div><div class="price-row"><span>Conejito Turín</span><strong>$100</strong></div><div class="price-row"><span>Oreo / Fresa / Chocolate / Vainilla</span><strong>$65</strong></div></div></article>
             <article class="card p-6"><h3 class="display text-2xl">BEBIDAS CALIENTES</h3><div class="mt-3 space-y-1"><div class="price-row"><span>Té 300 ml</span><strong>$15</strong></div><div class="price-row"><span>Café 300 ml</span><strong>$25</strong></div><div class="price-row"><span>Capuchino 300 ml</span><strong>$40</strong></div><div class="price-row"><span>Chocolate 300 ml</span><strong>$35</strong></div></div></article>
@@ -177,7 +177,7 @@
           </div>
         </div>
 
-        <div class="menu-panel hidden" data-panel="extras">
+        <div class="menu-panel" data-panel="extras" hidden>
           <article class="mx-auto max-w-xl rounded-xl bg-zinc-900 p-7 text-white"><h3 class="display text-3xl">INGREDIENTES EXTRAS</h3><div class="mt-4 space-y-2"><div class="price-row"><span>Cebolla caramelizada</span><strong>$10</strong></div><div class="price-row"><span>Queso manchego</span><strong>$15</strong></div><div class="price-row"><span>Jamón</span><strong>$15</strong></div><div class="price-row"><span>Salchicha</span><strong>$20</strong></div><div class="price-row"><span>Tocino</span><strong>$20</strong></div></div></article>
         </div>
       </div>
@@ -198,4 +198,3 @@
 
 </body>
 </html>
-
