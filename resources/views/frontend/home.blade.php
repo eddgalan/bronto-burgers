@@ -34,7 +34,7 @@
         </a>
 
         @auth
-          <a href="{{ route('dashboard') }}" class="rounded-full bg-bronto-orange px-4 py-2 text-sm font-black text-white transition hover:bg-orange-500">
+          <a href="{{ route('my-account') }}" class="rounded-full bg-bronto-orange px-4 py-2 text-sm font-black text-white transition hover:bg-orange-500">
             Mi cuenta
           </a>
         @else

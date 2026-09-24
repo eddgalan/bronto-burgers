@@ -12,6 +12,6 @@ class HomeController extends Controller
      */
     public function index(): Factory|View
     {
-        return view('home');
+        return view('frontend.home');
     }
 }

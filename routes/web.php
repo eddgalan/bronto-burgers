@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
 
-Route::view('/dashboard', 'dashboard')
+Route::view('/my-account', 'frontend/my-account')
     ->middleware('auth')
-    ->name('dashboard');
+    ->name('my-account');
+
+require __DIR__.'/admin.php';
